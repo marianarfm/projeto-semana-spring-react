@@ -1,17 +1,36 @@
-import NotificationButton from '../NotificationButton'
-import './style.css'
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import ptBR from 'date-fns/locale/pt-BR';
+import NotificationButton from '../NotificationButton';
+import './style.css';
 
 function SalesCard() {
+    const min = new Date(new Date().setDate(new Date().getDate() - 365));
+    const max = new Date();
+    const [minDate, setMinDate] = useState(min);
+    const [maxDate, setMaxDate] = useState(max);
+
     return (
         <>
             <div className="dsmeta-card">
                 <h2 className="dsmeta-sales-title">Vendas</h2>
                 <div>
                     <div className="dsmeta-form-control-container">
-                        <input className="dsmeta-form-control" type="text" placeholder="Digite uma data aqui"/>
+                        <DatePicker locale={ptBR}
+                            selected={minDate}
+                            onChange={(date: Date) => setMinDate(date)}
+                            className="dsmeta-form-control"
+                            dateFormat="dd/MM/yyyy"
+                        />
                     </div>
                     <div className="dsmeta-form-control-container">
-                        <input className="dsmeta-form-control" type="text" placeholder="Digite uma data aqui"/>
+                        <DatePicker locale={ptBR}
+                            selected={maxDate}
+                            onChange={(date: Date) => setMaxDate(date)}
+                            className="dsmeta-form-control"
+                            dateFormat="dd/MM/yyyy"
+                        />
                     </div>
                 </div>
 
@@ -39,7 +58,7 @@ function SalesCard() {
                                 <td>R$ 55.300,00</td>
                                 <td>
                                     <div className="dsmeta-red-btn-container">
-                                        <NotificationButton/>
+                                        <NotificationButton />
                                     </div>
                                 </td>
                             </tr>
@@ -53,7 +72,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
@@ -68,7 +87,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
@@ -83,7 +102,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
@@ -98,7 +117,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
@@ -113,7 +132,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
@@ -128,7 +147,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
@@ -143,7 +162,7 @@ function SalesCard() {
                                 <td>
                                     <div className="dsmeta-red-btn-container">
                                         <div className="dsmeta-red-btn">
-                                            <NotificationButton/>
+                                            <NotificationButton />
                                         </div>
                                     </div>
                                 </td>
